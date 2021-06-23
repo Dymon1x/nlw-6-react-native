@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, FlatList, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './styles';
 import { Profile } from '../../components/Profile/';
@@ -8,10 +9,14 @@ import { CategorySelect } from '../../components/CategorySelect';
 import { ListHeader } from '../../components/ListHeader';
 import { Appointment, AppointmentProps } from '../../components/Appointment';
 import { ListDivider } from '../../components/ListDivider';
+import { Background } from '../../components/Background'
+
 
 
 export function Home() {
   const [category, setCategory] = useState('');
+
+  const navigation = useNavigation();
 
   const appointments = [
     {
@@ -40,6 +45,14 @@ export function Home() {
     },
   ]
 
+  function handleAppointmentDetails() {
+    navigation.navigate('AppointmentDetails');
+  }
+
+  function handleAppointmentCreate() {
+    navigation.navigate('AppointmentCreate');
+  }
+
   //Marca e desmarca o quadrados de ranked, etc
   function handleCategorySelect(categoryId: string) {
     categoryId === category ? setCategory('') : setCategory(categoryId);
@@ -55,10 +68,10 @@ export function Home() {
   //FlatList é recomendado, pois irá renderizando as poucos os resultados
   //na Flatlist usando o keyExtractor, a propria lista cuida dos id's
   return (
-    <View>
+    <Background>
       <View style={styles.header}>
         <Profile />
-        <ButtonAdd />
+        <ButtonAdd onPress={handleAppointmentCreate} />
 
       </View>
 
@@ -76,7 +89,9 @@ export function Home() {
           data={appointments}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
-            <Appointment data={item} />
+            <Appointment data={item}
+              onPress={handleAppointmentDetails}
+            />
 
           )}
           ItemSeparatorComponent={() => <ListDivider />}
@@ -87,6 +102,6 @@ export function Home() {
         />
 
       </View>
-    </View>
+    </Background>
   );
 }

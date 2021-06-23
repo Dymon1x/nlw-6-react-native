@@ -10,11 +10,12 @@ import { Category } from '../Category';
 type Props = {
   categorySelected: String;
   setCategory: (categoryId: string) => void;
+  hasCheckBox?: boolean;
 }
 
 //sempre que estiver percorrendo listas, deverá ter uma key
 
-export function CategorySelect({ categorySelected, setCategory }: Props) {
+export function CategorySelect({ categorySelected, setCategory, hasCheckBox = false }: Props) {
   return (
     <ScrollView
       horizontal
@@ -30,6 +31,7 @@ export function CategorySelect({ categorySelected, setCategory }: Props) {
             icon={category.icon}
             checked={category.id === categorySelected}
             onPress={() => setCategory(category.id)}
+            hasCheckBox={hasCheckBox}
           />
         ))
       }
