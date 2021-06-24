@@ -8,15 +8,14 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.primary,
     borderRadius: 8,
     flexDirection: 'row',
-    alignItems: 'center',
-
+    alignItems: 'center'
   },
   title: {
     flex: 1,
     color: theme.colors.heading,
+    fontFamily: theme.fonts.text500,
     fontSize: 15,
     textAlign: 'center',
-    fontFamily: theme.fonts.text500,
   },
   iconWrapper: {
     width: 56,
@@ -28,6 +27,6 @@ export const styles = StyleSheet.create({
   },
   icon: {
     width: 24,
-    height: 18,
+    height: 18
   }
 });
