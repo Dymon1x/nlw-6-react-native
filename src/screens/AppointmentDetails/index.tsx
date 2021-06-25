@@ -34,12 +34,7 @@ export function AppointmentDetails() {
       avatar_url: 'https://github.com/Dymon1x.png',
       status: 'offline'
     },
-    {
-      id: '3',
-      username: 'Leonardo',
-      avatar_url: 'https://github.com/Dymon1x.png',
-      status: 'ocupado'
-    }
+
   ]
   return (
     <Background>
