@@ -3,7 +3,7 @@ import {
   View,
   Modal,
   ModalProps,
-  TouchableWithoutFeedback, //usando para quando clicar na tela em qualquer lugar para fazer uma ação
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 import { styles } from './styles';
@@ -15,7 +15,11 @@ type Props = ModalProps & {
   closeModal: () => void;
 }
 
-export function ModalView({ children, closeModal, ...rest }: Props) {
+export function ModalView({
+  children,
+  closeModal,
+  ...rest
+}: Props) {
   return (
     <Modal
       transparent

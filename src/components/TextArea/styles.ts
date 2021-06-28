@@ -17,4 +17,4 @@ export const styles = StyleSheet.create({
     paddingTop: 16,
     textAlignVertical: 'top'
   }
-});  
+});

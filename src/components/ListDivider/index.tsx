@@ -7,9 +7,9 @@ type Props = {
   isCentered?: boolean;
 }
 
-export function ListDivider({ isCentered }: Props) {
+export function ListDivider({ isCentered }: Props){
   return (
-    <View
+    <View 
       style={[
         styles.container,
         isCentered ? {

@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     fontSize: 13,
     fontFamily: theme.fonts.text400,
     color: theme.colors.heading,
-    lineHeight: 21,
+    lineHeight: 21
   },
   members: {
     marginLeft: 24,
@@ -34,6 +34,13 @@ export const styles = StyleSheet.create({
   footer: {
     paddingHorizontal: 24,
     paddingVertical: 20,
-    marginBottom: getBottomSpace(), // a barra inferior em modelos de iphone e xiaomi note
+    marginBottom: getBottomSpace(),
+  },
+  emptyContainer: {
+    alignItems: 'center',
+  },
+  emptyText: {
+    fontFamily: theme.fonts.text500,
+    color: theme.colors.heading
   }
 });
