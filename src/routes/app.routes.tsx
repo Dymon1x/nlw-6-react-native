@@ -1,20 +1,16 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Home } from '../screens/Home';
-import { SignIn } from '../screens/SignIn';
-import { AppointmentDetails } from '../screens/AppointmentDetails';
-
-import { AppointmentCreate } from '../screens/AppointmentCreate';
 import { theme } from '../global/styles/theme';
+
+import { Home } from '../screens/Home';
+import { AppointmentDetails } from '../screens/AppointmentDetails';
+import { AppointmentCreate } from '../screens/AppointmentCreate';
 
 const { Navigator, Screen } = createStackNavigator();
 
-//function route que será usada quando o usuario estiver logado
-
-//Por padrao o navigation vem com suas proprias propriedades, mas podendo retira-las como esta abaixo
-export function AuthRoutes() {
-  return (
+export function AppRoutes() {
+  return(
     <Navigator
       headerMode="none"
       screenOptions={{
@@ -22,19 +18,19 @@ export function AuthRoutes() {
           backgroundColor: theme.colors.secondary100
         }
       }}
-    >
-      <Screen
+    >     
+      <Screen 
         name="Home"
-        component={Home} />
-
-      <Screen
+        component={Home}
+      />
+      <Screen 
         name="AppointmentDetails"
-        component={AppointmentDetails} />
-
-      <Screen
+        component={AppointmentDetails}
+      />
+      <Screen 
         name="AppointmentCreate"
         component={AppointmentCreate}
-      />
+      />      
     </Navigator>
-  );
+  )
 }

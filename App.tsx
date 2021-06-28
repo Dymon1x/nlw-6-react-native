@@ -1,35 +1,30 @@
 import React from 'react';
-import { StatusBar, LogBox  } from 'react-native'
-import { useFonts } from 'expo-font'; //o papel desse import será carregar as fontes nos dispositivos
+import { StatusBar, LogBox } from 'react-native';
 import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhani';
 import AppLoading from 'expo-app-loading';
+import { useFonts } from 'expo-font';
 
-import { Routes } from './src/routes';
-import { Background } from './src/components/Background'
 import { AuthProvider } from './src/hooks/auth';
 
+import { Routes } from './src/routes';
+import { Background } from './src/components/Background';
 
-LogBox.ignoreLogs(['You are not currently signed in to Expo on your development machine.']);
-//carregamento das fontes por usabilidade deve ser na primeira tela, pois quando for para alguma outra tela, ja terá as fontes desejadas
-
-// O StatusBar foi colocado aqui para ficar como padrao para todo o app, sem necessidade de repetir codigo
+LogBox.ignoreLogs(['You are not currently signed in to Expo on your development machine.'])
 
 export default function App() {
   const [fontsLoaded] = useFonts({
     Inter_400Regular,
     Inter_500Medium,
     Rajdhani_500Medium,
-    Rajdhani_700Bold,
+    Rajdhani_700Bold
   });
 
   if (!fontsLoaded) {
-    return <AppLoading /> //segura a tela de splash, ate tudo ser carregado
+    return <AppLoading />
   }
 
-  //components sendo renderizando
-  return (//Esta <>     </> seria a mesma coisa que <Fragment>      </Fragment>
-
+  return (
     <Background>
       <StatusBar
         barStyle="light-content"

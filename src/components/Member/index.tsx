@@ -21,7 +21,7 @@ type Props = {
   data: MemberProps;
 }
 
-export function Member({ data }: Props) {
+export function Member({ data }: Props){
   const { on, primary } = theme.colors;
   const isOnline = data.status === 'online';
 
@@ -31,11 +31,11 @@ export function Member({ data }: Props) {
 
       <View>
         <Text style={styles.title}>
-          {data.username}
+          { data.username }
         </Text>
 
         <View style={styles.status}>
-          <View
+          <View 
             style={[
               styles.bulletStatus,
               {
@@ -45,7 +45,7 @@ export function Member({ data }: Props) {
           />
 
           <Text style={styles.nameStatus}>
-            {isOnline ? 'Disponível' : 'Ocupado'}
+            { isOnline ? 'Disponível' : 'Ocupado' }
           </Text>
         </View>
       </View>

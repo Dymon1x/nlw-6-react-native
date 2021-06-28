@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';// esse import resolverá problemas de espaçamento no marginTop em iphone
 import { theme } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
@@ -8,17 +7,16 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 24,
-    marginTop: 27,
+    marginTop: 27
   },
   title: {
     fontFamily: theme.fonts.title700,
     color: theme.colors.heading,
     fontSize: 18,
-
   },
   subtitle: {
-    fontFamily: theme.fonts.title700,
+    fontFamily: theme.fonts.text400,
     color: theme.colors.highlight,
     fontSize: 13,
-  },
+  }
 });

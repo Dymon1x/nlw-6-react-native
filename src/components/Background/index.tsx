@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react'; // ReactNode é qualquer elemento filho do React
-
+import React, { ReactNode } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
+
 import { styles } from './styles';
 import { theme } from '../../global/styles/theme';
 
@@ -9,10 +9,8 @@ type Props = {
 }
 
 export function Background({ children }: Props) {
+  const { secondary80, secondary100 } = theme.colors;
 
-  const { secondary80, secondary100 } = theme.colors; // desestruturação
-
-  //irá reaproveitar o gradient para todas as interfaces do app
   return (
     <LinearGradient
       style={styles.container}
@@ -20,5 +18,5 @@ export function Background({ children }: Props) {
     >
       {children}
     </LinearGradient>
-  );
+  )
 }

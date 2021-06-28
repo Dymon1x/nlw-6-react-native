@@ -23,7 +23,7 @@ export type AppointmentProps = {
 
 type Props = RectButtonProps & {
   data: AppointmentProps;
-}
+} 
 
 export function Appointment({ data, ...rest }: Props) {
   const [category] = categories.filter(item => item.id === data.category);
@@ -33,21 +33,21 @@ export function Appointment({ data, ...rest }: Props) {
   return (
     <RectButton {...rest}>
       <View style={styles.container}>
-        <LinearGradient
+        <LinearGradient 
           style={styles.guildIconContainer}
           colors={[secondary50, secondary70]}
         >
-          <GuildIcon />
+          <GuildIcon guildId={data.guild.id} iconId={data.guild.icon} />
         </LinearGradient>
 
         <View style={styles.content}>
           <View style={styles.header}>
             <Text style={styles.title}>
-              {data.guild.name}
+              { data.guild.name }
             </Text>
 
             <Text style={styles.category}>
-              {category.title}
+              { category?.title }
             </Text>
           </View>
 
@@ -56,20 +56,20 @@ export function Appointment({ data, ...rest }: Props) {
               <CalendarSvg />
 
               <Text style={styles.date}>
-                {data.date}
+                { data.date }                
               </Text>
             </View>
 
             <View style={styles.playersInfo}>
-              <PlayerSvg fill={owner ? primary : on} />
+              <PlayerSvg fill={ owner ? primary : on}/>
 
               <Text style={[
-                styles.player,
+                styles.player, 
                 { color: owner ? primary : on }
               ]}>
-                {owner ? 'Anfitrião' : 'Visitante'}
+                { owner ? 'Anfitrião' : 'Visitante' }
               </Text>
-            </View>
+            </View>          
           </View>
         </View>
       </View>
